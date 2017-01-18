@@ -14,7 +14,7 @@ public class Zadatak3IzmenaVrednosti {
         ConnectionSource connectionSource = null;
 
         try {
-            connectionSource = new JdbcConnectionSource(Konstanta.DATABASE_URL);
+            connectionSource = new JdbcConnectionSource("jdbc:sqlite:knjigaOblast.db");
 
 
         } catch (SQLException e) {
