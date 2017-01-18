@@ -18,16 +18,16 @@ public class Oblast {
     private String naziv;
 
     @DatabaseField (columnName = POLJE_POCETNA_STRANA, canBeNull = false)
-    private String pocetnaStrana;
+    private int pocetnaStrana;
 
-    @DatabaseField (foreign = true,foreignAutoRefresh = true,columnName = "knjiga_id")
+    @DatabaseField (foreign = true,foreignAutoRefresh = false)
     private Knjiga knjiga;
 
     public Oblast(){
 
     }
 
-    public Oblast(String naziv, String pocetnaStrana) {
+    public Oblast(String naziv, int pocetnaStrana) {
         this.naziv = naziv;
         this.pocetnaStrana = pocetnaStrana;
     }
@@ -48,11 +48,11 @@ public class Oblast {
         this.naziv = naziv;
     }
 
-    public String getPocetnaStrana() {
+    public int getPocetnaStrana() {
         return pocetnaStrana;
     }
 
-    public void setPocetnaStrana(String pocetnaStrana) {
+    public void setPocetnaStrana(int pocetnaStrana) {
         this.pocetnaStrana = pocetnaStrana;
     }
 

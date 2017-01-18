@@ -6,6 +6,7 @@ import com.j256.ormlite.table.TableUtils;
 import model.Knjiga;
 import model.Oblast;
 
+import java.io.IOException;
 import java.sql.SQLException;
 
 /**
@@ -32,6 +33,14 @@ public class Zadatak1KreiranjeTabela {
 
         } catch (SQLException e) {
             e.printStackTrace();
+        }finally {
+
+            try {
+                //Zatvaranje konekcije sa bazom
+                connectionSource.close();
+            } catch (IOException e) {
+                e.printStackTrace();
+            }
         }
     }
 

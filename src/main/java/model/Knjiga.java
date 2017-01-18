@@ -22,6 +22,9 @@ public class Knjiga {
     @DatabaseField (generatedId = true)
     private int id;
 
+    @DatabaseField (columnName = POLJE_NASLOV, canBeNull = false)
+    private String naslov;
+
 
 
     @DatabaseField (columnName = POLJE_BROJ_STRANA, canBeNull = false)
@@ -32,8 +35,8 @@ public class Knjiga {
 
     private Boolean prisutan = true;
 
-    @ForeignCollectionField (foreignFieldName = "knji@DatabaseField (columnName = POLJE_NASLOV, canBeNull = false)\n" +
-            "    private String naslov;ga")
+    @ForeignCollectionField (foreignFieldName ="knjiga")
+
     private ForeignCollection<Oblast>oblasti;
 
     public Knjiga(){
